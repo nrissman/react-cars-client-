@@ -1,46 +1,52 @@
 import { 
     Form,
     Button, 
+    Container
 } from 'react-bootstrap'
 
 const CarForm = (props) => {
-    const { car, handleChange } = props
+    const { car, handleChange, heading, handleSubmit } = props
 
     return (
-        <Form>
-            <Form.Label htmlFor="name">Name</Form.Label>
-            <Form.Control
-                placeholder="What is your car's name?"
-                name="name"
-                id="name"
-                value={ car.name }
-                onChange={ handleChange }
-            />
-            <Form.Label htmlFor="type">Type</Form.Label>
-            <Form.Control
-                placeholder="What kind of car is this?"
-                name="type"
-                id="type"
-                value={ car.type }
-                onChange={ handleChange }
-            />
-            <Form.Label htmlFor="age">Age</Form.Label>
-            <Form.Control
-                placeholder="How old is your car?"
-                type="number"
-                name="age"
-                id="age"
-                value={ car.age }
-                onChange={ handleChange }
-            />
-            <Form.Check
-                label="Is this car adoptable?"
-                name="adoptable"
-                defaultChecked={ car.adoptable  }
-                onChange={ handleChange }
-            />
-            <Button type="submit">Submit</Button>
-        </Form>
+        <Container>
+            <h3>{heading}</h3>
+            <Form onSubmit={handleSubmit}>
+                <Form.Label htmlFor="name">Name</Form.Label>
+                <Form.Control
+                    placeholder="What is your car's name?"
+                    name="name"
+                    id="name"
+                    value={ car.name }
+                    onChange={ handleChange }
+                />
+                <Form.Label htmlFor="make">Make</Form.Label>
+                <Form.Control
+                    placeholder="What s the make?"
+                    name="make"
+                    id="make"
+                    value={ car.type }
+                    onChange={ handleChange }
+                />
+                <Form.Label htmlFor="model">Model</Form.Label>
+                <Form.Control
+                    placeholder="What is the model?"
+                    name="model"
+                    id="model"
+                    value={ car.type }
+                    onChange={ handleChange }
+                />
+                <Form.Label htmlFor="year">Year</Form.Label>
+                <Form.Control
+                    placeholder="What year was the car produced?"
+                    type="number"
+                    name="year"
+                    id="year"
+                    value={ car.year }
+                    onChange={ handleChange }
+                />
+                <Button type="submit">Submit</Button>
+            </Form>
+        </Container>
     )
 }
 

@@ -78,7 +78,7 @@ const App = () => {
 					path="/addCar"
 					element={
 						<RequireAuth user={ user }>
-							<CreateCar />
+							<CreateCar msgAlert={msgAlert} user={user}/>
 						</RequireAuth>  
 					}
 				/>
